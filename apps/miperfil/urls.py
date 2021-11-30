@@ -3,5 +3,4 @@ from apps.miperfil.views import index
 
 urlpatterns = [
     url(r'^$',index)
-
 ]
