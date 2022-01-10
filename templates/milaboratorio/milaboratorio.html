@@ -1,34 +1,78 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
+{% block extrahead %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+{% endblock %}
 
 {% block title %}
     MI LABORATORIO
 {% endblock %}
 
-
-
-
-
 {% block content %}
-<div class="container-fluid p-0">
 
-    <section class="resume-section" id="about">
-        <div class="resume-section-content">
-              <h1 class="mb-0">
-                 Primer problema
-                 <span class="text-primary">Chess Challenge</span>
-              </h1>
-              <div class="subheading mb-5">
-                 <a href="mailto:lamedinaa@gmail.com">lamedinaa@gmail.com</a>
-              </div>
-              <script src="https://gist.github.com/lamedinaa/92899f46bbab63b3a749680b97b529e9.js"></script>
 
-        </div>
-    </section>
+<section class="resume-section" id="experience">
     
- </div>
- 
+    
+    <div class="resume-section-content">
+        <h2 class="mb-5"><i class="fab fa-python fa-2x" style="color:green"></i>&nbsp &nbsp Python Challenges </h2>
+       
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">INTRODUCCIÓN:</h3>
+                <div class="subheading mb-3">
+                    <a href="/milaboratorio/soluciones/{{problema.id_problema}}">
+                    
+                    </a>
+                </div>
+                <p>
+                    Acá encontrarás retos que he resuelto puesto me apasiona el tema y los retos, algunos problemas de campeonato tal como "VER SOLUCIÓN" y otros problemas sencillos
+                        propuestos por VER SOLUCIÓN, ¡eso sí! si eres un científico de la programación  <b>¡intenta hacerlos tú!</b>  y no te pierdas de la experiencia, ¡todo en código python!
+                </p>
+            </div>
+            <div class="flex-shrink-0">
+                <span class="text-primary">                    
+                    <a href="">      
+                       
+                    </a>
+                </span>
+            </div>
+        </div>
+
+        {% for problema in problemas %}
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">{{problema.nombre_problema}}</h3>
+                            <div class="subheading mb-3">
+                                <a href="/milaboratorio/soluciones/{{problema.id_problema}}">
+                                    VER SOLUCIÓN
+                                </a>
+                            </div>
+                            <p>
+                                {{problema.descripcion}}
+                            </p>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <span class="text-primary">                    
+                                <a href="{{problema.plataforma_problema}}">      
+                                    VER PROBLEMA
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+        
+        {% endfor %}
+
+</section>
 
 
 {% endblock %}
 
+{% block extrajs %}
+        <script src="{% static 'js\mathscribe\jquery-1.4.3.js' %}"></script>
+        <script src="{% static 'js\mathscribe\jqmath-etc-0.4.6.min.js' %}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>        
+{% endblock %}

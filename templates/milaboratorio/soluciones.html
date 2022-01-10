@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+    MI LABORATORIO
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+<section class="resume-section" id="experience">
+
+    
+    <div class="resume-section-content">
+        <h2 class="mb-5"><i class="fab fa-python fa-2x" style="color:green"></i>&nbsp &nbsp {{problema.nombre_problema}} </h2>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0"></h3>
+                            <div class="subheading mb-3">
+                            </div>
+                            <p>
+                                {{solucion.texto_solucion}}
+                            </p>
+
+                            <script src="{{solucion.link_gist}}"></script>
+                        </div>
+                        
+                    </div>
+        
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block extrajs %}
+    <script src="{% static 'js\mathscribe\jquery-1.4.3.js' %}"></script>
+    <script src="{% static 'js\mathscribe\jqmath-etc-0.4.6.min.js' %}"></script>
+{% endblock %}
