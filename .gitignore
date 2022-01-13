@@ -1,0 +1,4 @@
+*.save
+*.ini
+*_params
+*.sock
