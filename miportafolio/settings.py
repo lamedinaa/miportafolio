@@ -4,7 +4,7 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-path_settings = os.path.join(BASE_DIR.parent,"settingsmiportafolio\settings.json")
+path_settings = os.path.join(BASE_DIR.parent,"settings/settings.json")
 
 with open(path_settings) as json_file:
     data = json.load(json_file)
@@ -112,3 +112,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR.parent,'static'),)
+#STATIC_ROOT = os.path.join(BASE_DIR.parent,'static')
